@@ -7,7 +7,7 @@ public class Main
 {
 	public static void main(String [] args) 
 	{
-	//hello everybody...
+	//hello everybody....
 		// The name of the file to open.
         String fileName = "HereItIs.txt";
 
