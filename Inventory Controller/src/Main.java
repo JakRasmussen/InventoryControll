@@ -8,7 +8,7 @@ public class Main
 	public static void main(String [] args) 
 	{
 	//hello everybody...
-		// The name of the file to open.
+		// The name of the file to open..
         String fileName = "HereItIs.txt";
 
         // This will reference one line at a time
