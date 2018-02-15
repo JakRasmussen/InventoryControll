@@ -4,30 +4,25 @@ import java.io.IOException;
 
 public class WriteFile
 {
-	public static void main(String [] args) 
+	public static void mainWrite() 
 	{
-		// The name of the file to open.
-        String fileName = "HereItIs.txt";
+	 BufferedWriter out;
+	 String read;
 
         try 
         {
-            // Assume default encoding.
-            FileWriter fileWriter = new FileWriter(fileName);
-
-            // Always wrap FileWriter in BufferedWriter.
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-            // Note that write() does not automatically
-            // append a newline character.
-            bufferedWriter.newLine();
-
-            // Always close files.
-            bufferedWriter.close();
+        out = new BufferedWriter(new FileWriter("HereItIs.txt", true));
+        for (int i = 0; i < InventoryAdd.inventory.size(); i++)
+        	{
+        	InventoryAdd.inventory.get(i).setName(InventoryAdd.inventory.get(i).getName().replaceAll(" ", "-"));
+        	out.write(InventoryAdd.inventory.get(i).getSKU() + " " + InventoryAdd.inventory.get(i).getName() + " " + InventoryAdd.inventory.get(i).getAmount() + " " + InventoryAdd.inventory.get(i).getCost() + " " + InventoryAdd.inventory.get(i).getSold() + " " + InventoryAdd.inventory.get(i).getStoreCost());
+        	}
+          out.close();
         }
         
         catch(IOException ex) 
         {
-            System.out.println("Error writing to file '" + fileName + "'");
+            System.out.println("Error writing to file HereItIs.txt");
             // Or we could just do this:
             // ex.printStackTrace();
         }
