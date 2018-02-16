@@ -8,6 +8,7 @@ public class Main
 		
 		InitialMenu.firstQuestion();
         String fileName = "HereItIs.txt";
+        WriteFile.mainWrite();
 
         
         // This will reference one line at a time

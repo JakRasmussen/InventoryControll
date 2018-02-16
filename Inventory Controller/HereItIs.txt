@@ -1,4 +1,4 @@
-8675309 12-pack-Nuke 36 15 5 10
+8675309 Little-Kimmy-Rocket-Man-Starter-Kit 36 15 5 10
 8008555 Cats-in-bulk 27 25 10 20
 5558008 101-Dalmations 101 25 10 15
 2876550 Pallet-of-Cake 67 30 15 20
@@ -7,4 +7,4 @@
 2255722 66-portals-to-Narnia 9 35 15 30
 4638669 99-Bottles-of-Beer-on-the-Wall 83 5 2 20
 2276373 Way-to-many-Wacky-Waving-Inflatable-Arm-Flailing-Tubemen 96 12 6 40
-4695263 4-pack-of-As-on-a-certain-CompSci-project-which-shall-remain-nameless 4 20 10 20
+4695263 4-pack-of-As-on-a-certain-CompSci-project-which-shall-remain-nameless 4 20 10 
