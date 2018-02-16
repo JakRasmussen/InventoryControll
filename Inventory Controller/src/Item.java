@@ -7,7 +7,8 @@ public class Item
 	private int cost; //how much we are paying for it
 	private int sold; // how many we sold
 	private int storeCost; // how much we paid for it
-public Item (int s, String n, int a, int c, int so, int sc)
+	private int fullStock; //this is what the full stock is;
+public Item (int s, String n, int a, int c, int so, int sc , int fs)
 	{
 	SKU = s;
 	name = n;
@@ -15,6 +16,7 @@ public Item (int s, String n, int a, int c, int so, int sc)
 	cost = c;
 	sold = so;
 	storeCost = sc;
+	fullStock = fs;
 	}
 public int getSKU()
 	{
@@ -64,4 +66,8 @@ public void setStoreCost(int storeCost)
 	{
 	this.storeCost = storeCost;
 	}
+public int getFullStock()
+{
+	return fullStock;
+}
 }

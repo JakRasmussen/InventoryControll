@@ -9,6 +9,7 @@ public class EmployeeMenu
 			int decision = 0;
 			try
 			{
+				autoCheckStock();
 				Scanner employeeIn = new Scanner(System.in);
 				System.out.println("What would you like to look at? \n(1)Orders \n(2)Expences \n(3)Go Back");
 				decision = employeeIn.nextInt();
@@ -33,11 +34,16 @@ public class EmployeeMenu
 
 		private static void expences() throws IOException
 			{
+				int bottomLine = 0;
 				for(int i = 0 ; i < InventoryAdd.inventory.size() ; i++)
 					{ 
-						int totalCost = InventoryAdd.inventory.get(i).getSold() + InventoryAdd.inventory.get(i).getStoreCost();
-						System.out.println( "For: " + InventoryAdd.inventory.get(i) + " We have sold: " + InventoryAdd.inventory.get(i).getSold() + " And it cost :" + totalCost); 
+						int income = InventoryAdd.inventory.get(i).getSold() * InventoryAdd.inventory.get(i).getAmount();
+						int expences = InventoryAdd.inventory.get(i).getAmount() * InventoryAdd.inventory.get(i).getStoreCost();
+						System.out.println( "For: " + InventoryAdd.inventory.get(i).getName() + " We have sold: " + InventoryAdd.inventory.get(i).getSold() + " And it cost :" + expences); 
+						bottomLine += income - expences;
 					}
+				System.out.println();
+				System.out.println("The bottom line is: " + bottomLine);
 				System.out.println();
 				initialMenu();
 				
@@ -54,4 +60,18 @@ public class EmployeeMenu
 				initialMenu();
 				
 			}
+		private static void autoCheckStock()
+		{
+			for(int i = 0; i < InventoryAdd.inventory.size() ; i++)
+				{
+					int isFull = InventoryAdd.inventory.get(i).getFullStock() - InventoryAdd.inventory.get(i).getAmount();
+					if(isFull >= 1)
+						{
+							System.out.println("Ordering " + isFull + " of " + InventoryAdd.inventory.get(i).getName());
+							InventoryAdd.inventory.get(i).setAmount(InventoryAdd.inventory.get(i).getFullStock());
+						}
+				}
+			System.out.println();
+		}
 	}
+
