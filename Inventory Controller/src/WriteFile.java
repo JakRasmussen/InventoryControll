@@ -12,10 +12,12 @@ public class WriteFile
         try 
         {
         out = new BufferedWriter(new FileWriter("HereItIs.txt", true));
+        out.newLine();
         for (int i = 0; i < InventoryAdd.inventory.size(); i++)
         	{
         	InventoryAdd.inventory.get(i).setName(InventoryAdd.inventory.get(i).getName().replaceAll(" ", "-"));
         	out.write(InventoryAdd.inventory.get(i).getSKU() + " " + InventoryAdd.inventory.get(i).getName() + " " + InventoryAdd.inventory.get(i).getAmount() + " " + InventoryAdd.inventory.get(i).getCost() + " " + InventoryAdd.inventory.get(i).getSold() + " " + InventoryAdd.inventory.get(i).getStoreCost());
+        	out.newLine();
         	}
           out.close();
         }
